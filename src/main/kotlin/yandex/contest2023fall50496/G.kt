@@ -1,7 +1,7 @@
 package yandex.contest2023fall50496
 
-import yandex.INPUT
-import yandex.OUTPUT
+import yandex.INPUT_FILE
+import yandex.OUTPUT_FILE
 import yandex.readFile
 import yandex.writeFile
 
@@ -68,7 +68,7 @@ fun gooseFinder(){
 
     val keyWord = "goose"
 
-    val input = readFile(INPUT)
+    val input = readFile(INPUT_FILE)
 
     val nK = input[0].split(" ")
     val messagesCounter = nK.first().toInt()
@@ -102,5 +102,5 @@ fun gooseFinder(){
         answer = "$answer\n${sortedBadUsers[it]}"
     }
 
-    writeFile(answer, OUTPUT)
+    writeFile(answer, OUTPUT_FILE)
 }

@@ -1,8 +1,2 @@
-5 5
-main reader webpage profile alice
-main
-main reader
-reader main
-webpage profile
-profile alice
-alice main
+5
+1 0 1000000000 0 1

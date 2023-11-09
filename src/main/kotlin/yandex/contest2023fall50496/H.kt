@@ -1,7 +1,7 @@
 package yandex.contest2023fall50496
 
-import yandex.INPUT
-import yandex.OUTPUT
+import yandex.INPUT_FILE
+import yandex.OUTPUT_FILE
 import yandex.readFile
 import yandex.writeFile
 
@@ -41,7 +41,7 @@ class H {
 fun pathForWALLE(){
     //notOK - не успел -
 
-    val path = readFile(INPUT)[0]
+    val path = readFile(INPUT_FILE)[0]
     println(path)
 
     var pathLeft = 1
@@ -85,5 +85,5 @@ fun pathForWALLE(){
     }
     answer = sumCrossroads
 
-    writeFile(answer.toString(), OUTPUT)
+    writeFile(answer.toString(), OUTPUT_FILE)
 }

@@ -1,18 +1,12 @@
 package yandex.contest2023fall50496
 
-import yandex.INPUT
-import yandex.OUTPUT
-import yandex.CORRECT_ANSWER
-import yandex.readFile
-import yandex.writeFile
-
-
+import yandex.*
 
 fun main(args: Array<String>) {
-    //runTest("lowBattery", examples1F(), ::lowBattery)
-    //runTest("gooseFinder", examples2G(), ::gooseFinder)
-    runTest("pathForWALLE", examples3H(), ::pathForWALLE)
-    //runTest("logRecovery", examples4I(), ::logRecovery)
+    //runTest("lowBattery", examples1F(), ::lowBattery) //OK
+    //runTest("gooseFinder", examples2G(), ::gooseFinder) //OK
+    runTest("pathForWALLE", examples3H(), ::pathForWALLE) //notOk
+    //runTest("logRecovery", examples4I(), ::logRecovery) //notOK
 }
 
 private fun examples1F(): Array<Pair<String, String>>{
@@ -76,20 +70,21 @@ private fun examples3H(): Array<Pair<String, String>> {
     )
 }
 
+/*
 private fun runTest(nameFun: String, examples: Array<Pair<String, String>>, function: () -> Unit){
     println(" $nameFun")
     repeat(examples.size) {
         writeExample(input = examples[it].first, correctAnswer = examples[it].second)
 
         function()
-        val answer = readFile(OUTPUT)
-        val correctAnswer = readFile(CORRECT_ANSWER)
+        val answer = readFile(OUTPUT_FILE)
+        val correctAnswer = readFile(CORRECT_ANSWER_FILE)
         println(answer == correctAnswer)
         //println(readFile(OUTPUT))
     }
 }
 private fun writeExample(input: String, correctAnswer: String){
-    writeFile(input, INPUT)
-    writeFile(correctAnswer, CORRECT_ANSWER)
-    writeFile("DEFAULT", OUTPUT)
-}
+    writeFile(input, INPUT_FILE)
+    writeFile(correctAnswer, CORRECT_ANSWER_FILE)
+    writeFile("DEFAULT", OUTPUT_FILE)
+}*/

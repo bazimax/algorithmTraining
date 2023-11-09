@@ -1,7 +1,7 @@
 package yandex.contest2023fall50496
 
-import yandex.INPUT
-import yandex.OUTPUT
+import yandex.INPUT_FILE
+import yandex.OUTPUT_FILE
 import yandex.readFile
 import yandex.writeFile
 
@@ -61,7 +61,7 @@ fun main(args: Array<String>) {
 fun logRecovery(){
     //notOK - 241ms - на контесте пройден частично (не прошел 3 тест, что за тест непонятно)
 
-    val input = readFile(INPUT)
+    val input = readFile(INPUT_FILE)
 
     val nM = input[0].split(" ")
     //val screenCount = nM.first().toInt()
@@ -86,5 +86,5 @@ fun logRecovery(){
         if (it.value == 0) answer++
     }
 
-    writeFile(answer.toString(), OUTPUT)
+    writeFile(answer.toString(), OUTPUT_FILE)
 }

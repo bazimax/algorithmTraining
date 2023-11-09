@@ -1,7 +1,7 @@
 package yandex.contest2023fall50496
 
-import yandex.INPUT
-import yandex.OUTPUT
+import yandex.INPUT_FILE
+import yandex.OUTPUT_FILE
 import yandex.readFile
 import yandex.writeFile
 
@@ -40,7 +40,7 @@ fun main(args: Array<String>) {
 fun lowBattery(){
     //OK - 407ms - все тесты пройдены
 
-    val appPercents = readFile(INPUT)[1].split(" ")
+    val appPercents = readFile(INPUT_FILE)[1].split(" ")
     var sum = 0
 
     appPercents.forEach {
@@ -49,5 +49,5 @@ fun lowBattery(){
 
     val answer = 100 / sum
 
-    writeFile(answer.toString(), OUTPUT)
+    writeFile(answer.toString(), OUTPUT_FILE)
 }
