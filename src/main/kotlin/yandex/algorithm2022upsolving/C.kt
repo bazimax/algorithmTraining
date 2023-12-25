@@ -27,19 +27,6 @@ fun almostSquareNumbers(){
 
     //println("num: $number, sqrtInt: $sqrtInt")
     var count = 0
-    /*var iCount = sqrtInt
-    while (iCount > 0) {
-        val iAlmostSquare = iCount * (iCount + 1)
-        println("--i: $iCount, iAlmostSquare: $iAlmostSquare, ${number - iAlmostSquare}")
-        val tempCount1 = if (iAlmostSquare <= number) checkAlmostSquare(iAlmostSquare) else -1
-        val tempCount2 = if (iAlmostSquare <= number) checkAlmostSquare(number - iAlmostSquare) else -1
-        println("--i: $iCount, tempCount: $tempCount1 $tempCount2")
-
-        if (tempCount1 != -1 && tempCount2 != -1 ) minCount = min(minCount, tempCount1 + tempCount2 )
-
-        println("-i: $iCount, minCount: $minCount, ++${count++}")
-        iCount /= 2
-    }*/
 
     for (i in sqrtInt downTo 1) {
         val iAlmostSquare = i * (i + 1)
@@ -81,36 +68,3 @@ private fun checkAlmostSquare(number: Long) : Int {
     }
     return answer
 }
-
-/*
-import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.FileReader
-import java.io.FileWriter
-
-const val INPUT = "input.txt"
-const val OUTPUT = "output.txt"
-
-fun main(args: Array<String>) {
-catsInArt()
-}
-fun catsInArt(){}
-
-fun readFile(pathToInputFile: String): MutableList<String>{
-
-val file = BufferedReader(FileReader(pathToInputFile))
-
-val listString = mutableListOf<String>()
-file.lines().forEach { listString.add(it) }
-
-return listString
-}
-
-fun writeFile(string: String, pathToOutputFile: String){
-
-val output = BufferedWriter(FileWriter(pathToOutputFile))
-
-output.write(string)
-output.flush()
-}
-*/

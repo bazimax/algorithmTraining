@@ -20,7 +20,28 @@ fun main(args: Array<String>) {
     groupProjectV3()
 }
 
-//18:30 - 19:10 (40мин) > notOK частичное решение (234ms, 15.21Mb, не прошел тест 2)
+// OK (243ms, 15.76Mb)
+fun groupProjectV3(){
+    val input = BufferedReader(FileReader("input.txt"))
+    val t = input.readLine().split(" ").map { it.toInt() }[0] //(1 ≤ t ≤ 100)
+
+    var answer = ""
+
+    repeat(t){
+        //students:n, a и b (1 ≤ n ≤ 10^9, 1 ≤ a ≤ b ≤ n)
+        val (students, a, b) = input.readLine().split(" ").map { it.toULong() }
+
+        val tempAns = if (students % a <= (students / a) * (b - a)) "YES" else "NO"
+
+        answer = "$answer$tempAns\n"
+    }
+
+    val output = BufferedWriter(FileWriter("output.txt"))
+    output.write(answer)
+    output.flush()
+}
+
+// 18:30 - 19:10 (40мин) > notOK частичное решение (234ms, 15.21Mb, не прошел тест 2)
 fun groupProject(){
     val input = BufferedReader(FileReader("input.txt"))
     val t = input.readLine().split(" ").map { it.toInt() }[0] //(1 ≤ t ≤ 100)
@@ -60,7 +81,7 @@ fun groupProject(){
     output.flush()
 }
 
-//17:10 -
+// notOK частичное решение (234ms, 15.21Mb, не прошел тест 2)
 fun groupProjectV2(){
     val input = BufferedReader(FileReader("input.txt"))
     val t = input.readLine().split(" ").map { it.toInt() }[0] //(1 ≤ t ≤ 100)
@@ -86,23 +107,3 @@ fun groupProjectV2(){
     output.flush()
 }
 
-//OK (243ms, 15.76Mb)
-fun groupProjectV3(){
-    val input = BufferedReader(FileReader("input.txt"))
-    val t = input.readLine().split(" ").map { it.toInt() }[0] //(1 ≤ t ≤ 100)
-
-    var answer = ""
-
-    repeat(t){
-        //students:n, a и b (1 ≤ n ≤ 10^9, 1 ≤ a ≤ b ≤ n)
-        val (students, a, b) = input.readLine().split(" ").map { it.toULong() }
-
-        val tempAns = if (students % a <= (students / a) * (b - a)) "YES" else "NO"
-
-        answer = "$answer$tempAns\n"
-    }
-
-    val output = BufferedWriter(FileWriter("output.txt"))
-    output.write(answer)
-    output.flush()
-}

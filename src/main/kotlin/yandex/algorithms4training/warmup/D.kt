@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
     anagram()
 }
 
-//17:37 - 17:55 (18мин) > OK (421ms, 21.60Mb)
+// 17:37 - 17:55 (18мин) > OK (421ms, 21.60Mb)
 fun anagram(){
     //O(n)
     val input = BufferedReader(FileReader("input.txt"))
@@ -59,7 +59,7 @@ fun anagramV2(){
     output.flush()
 }
 
-//backup
+// BACKUP
 /*fun reverese(){
     val input = BufferedReader(FileReader("input.txt"))
     val str1 = input.readLine().replace("\\s".toRegex(), "")

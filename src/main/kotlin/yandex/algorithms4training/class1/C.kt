@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     mergerInput()
 }
 
-//14:50 - 15:40 (50мин) > OK (2.694s, 200.94Mb)
+// 14:50 - 15:40 (50мин) > OK (2.694s, 200.94Mb)
 fun mergerInput(){
     val input = BufferedReader(FileReader("input.txt"))
 

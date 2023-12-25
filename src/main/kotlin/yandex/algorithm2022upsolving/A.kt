@@ -138,37 +138,3 @@ private fun checkLockedColor(i: Int, j:Int, arr: Array<IntArray>): HashSet<Int>{
     if (i - 1 >= 0) set.add(arr[i - 1][j]) //up
     return set
 }
-
-//BACKUP (i - 1 >= 0 && i + 1 < n && j - 1 >= 0 && j + 1 < n)
-/*
-import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.FileReader
-import java.io.FileWriter
-
-const val INPUT = "input.txt"
-const val OUTPUT = "output.txt"
-
-fun main(args: Array<String>) {
-    catsInArt()
-}
-fun catsInArt(){}
-
-fun readFile(pathToInputFile: String): MutableList<String>{
-
-    val file = BufferedReader(FileReader(pathToInputFile))
-
-    val listString = mutableListOf<String>()
-    file.lines().forEach { listString.add(it) }
-
-    return listString
-}
-
-fun writeFile(string: String, pathToOutputFile: String){
-
-    val output = BufferedWriter(FileWriter(pathToOutputFile))
-
-    output.write(string)
-    output.flush()
-}
-*/

@@ -20,7 +20,7 @@ fun main(args: Array<String>) {
     theCorrectParentheticalSequence()
 }
 
-//18:15 - 18:25 (10мин) > OK (254ms, 15.95Mb)
+// 18:15 - 18:25 (10мин) > OK (254ms, 15.95Mb)
 fun theCorrectParentheticalSequence(){
     val input = BufferedReader(FileReader("input.txt")).readLine() // <100000
     var answer = "yes"

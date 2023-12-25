@@ -3,16 +3,16 @@ package yandex.algorithms4training.warmup
 import yandex.*
 
 fun main(args: Array<String>) {
-    //runTest("notAMinimumOnTheSegment", examplesA(), ::notAMinimumOnTheSegmentV2) //OK
-    //runTest("addTwoFractions", examplesB(), ::addTwoFractionsV3, ) //OK
-    runTest("travelInMoscow", examplesC(), ::travelInMoscow) //OK
-    //runTest("anagram", examplesD(), ::anagramV2) // OK
-    //runTest("mediumLevel", examplesE(), ::mediumLevelV3) //OK
+    // runTest("notAMinimumOnTheSegment", examplesA(), ::notAMinimumOnTheSegmentV2) //OK
+    // runTest("addTwoFractions", examplesB(), ::addTwoFractionsV3, ) //OK
+    // runTest("travelInMoscow", examplesC(), ::travelInMoscow) //OK
+    // runTest("anagram", examplesD(), ::anagramV2) // OK
+    runTest("mediumLevel", examplesE(), ::mediumLevelV3) //OK ?
     //runTest("elevator", examplesF(), ::elevatorV3, ) //OK
-    //runTest("bunnyIsLearningGeometry", examplesG(), ::bunnyIsLearningGeometryV4, ) //OK
-    //runTest("contestResults", examplesH(), ::contestResultsV2) //OK
-    //runTest("theCorrectParentheticalSequence", examplesI(), ::theCorrectParentheticalSequence) // OK
-    //runTest("groupProject", examplesJ(), ::groupProjectV3) //OK
+    // runTest("bunnyIsLearningGeometry", examplesG(), ::bunnyIsLearningGeometryV4, ) //OK
+    // runTest("contestResults", examplesH(), ::contestResultsV2) //OK
+    // runTest("theCorrectParentheticalSequence", examplesI(), ::theCorrectParentheticalSequence) // OK
+    // runTest("groupProject", examplesJ(), ::groupProjectV3) //OK
 }
 
 private fun examplesA(): Array<Pair<String, String>> {

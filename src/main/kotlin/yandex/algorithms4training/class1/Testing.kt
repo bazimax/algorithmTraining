@@ -7,8 +7,9 @@ fun main(args: Array<String>) {
     //runTest("partition", examplesA(), ::partitionV2) // OK
     //runTest("quickSort", examplesB(), ::quickSortInput) // notOk TL
     //runTest("quickSort", examplesB(), ::quickSortInputB) // Ok
+    runTest("quickSort", examplesB(), ::quickSortInputCFilter) // Ok
     //runTest("merger", examplesC(), ::mergerInput, ) // OK
-    runTest("mergeSort", examplesD(), ::mergeSortInput) // notOK TL
+    //runTest("mergeSort", examplesD(), ::mergeSortInput) // OK
     //runTest("bitSorting", examplesE(), ::bitSortingInput, ) // OK
 }
 

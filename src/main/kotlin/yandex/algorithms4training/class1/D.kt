@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
     mergeSortInput()
 }
 
-//17:50 - 18:30 (40мин) > notOK частичное решение (1.941s, 175.07Mb)
+// 17:50 - 18:30 (40мин) > OK (1.941s, 175.07Mb)
 fun mergeSortInput(){
     val input = BufferedReader(FileReader("input.txt"))
     val n = input.readLine().split(" ").map { it.toInt() }[0] //0 ≤ N ≤ 10^6
@@ -76,7 +76,7 @@ private fun merger(arrN: IntArray, arrM: IntArray): IntArray{
     return sortArr
 }
 
-//backup - даже чуть медленнее
+//backup - думал оптимизировал, но стало даже чуть медленнее - (1.962s, 179.62Mb)
 private fun mergeSortV1(arr: IntArray, l: Int = 0, r: Int = arr.size - 1): IntArray{
     //println("${arr.joinToString(" ")}  |  l: $l, r: $r")
     return if (l + 1 < r) {

@@ -22,8 +22,8 @@ import kotlin.system.measureNanoTime
 import kotlin.system.measureTimeMillis
 
 fun main(args: Array<String>) {
-    //mediumLevelV3()
-    //timeMillisRun(::mediumLevelV5, 3)
+    // mediumLevelV5()
+    // timeMillisRun(::mediumLevelV5, 3)
     /*val arr = arrayOf("12", "1", "0")
     println(arr[0].toInt() + arr[1].toInt())*/
     /*runTest("mediumLevel",
@@ -32,7 +32,50 @@ fun main(args: Array<String>) {
     )*/
 }
 
-//18:07 - 18:25 (18мин) > notOK частичное решение (1.085s, 34.45Mb, не прошел тест 7 TL)
+// OK (0.547s, 40.67Mb) //!!?? задача решена (в контесте ОК), но тесты он не проходит - надо разобраться c Input.txt
+fun mediumLevelV5(){
+
+    val input = BufferedReader(FileReader("input.txt"))
+    val n = input.readLine().toInt()
+    val text = input.readText()
+    val arr = text.substring(0, text.length - 1).split(" ")//.map { it.toInt() }.toIntArray()
+
+    //Первый проход. Справа налево. Определяем сумму всех недовольных справа от нынешнего старосты
+    var rightSum = 0
+    val arrR = IntArray(arr.size)
+
+    for (i in arr.lastIndex downTo 0) {
+
+        val headman = arr[i].toInt()
+        arrR[i] = rightSum - ( (arr.lastIndex - i) * headman ) //rightSum - minArea
+
+        rightSum += headman
+    }
+
+    //Второй проход. Слева направо. Определяем сумму всех недовольных слева от нынешнего старосты
+    //И тут же записываем значение сумму найденного значения и записанным с первого прохода
+    //var answer = ""
+    var leftSum = 0
+
+    val ansArr = IntArray(arr.size)
+
+    arr.forEachIndexed { index, i ->
+
+        val headman = i.toInt()
+
+        val leftArea = (headman * index) - leftSum //maxArea - leftSum
+        ansArr[index] = leftArea + arrR[index]
+        //answer = "$answer${leftArea + arrR[index]} "
+
+        leftSum += headman
+    }
+
+    val output = BufferedWriter(FileWriter("output.txt"))
+    output.write(ansArr.joinToString(" "))
+    output.flush()
+}
+
+// 18:07 - 18:25 (18мин) > notOK частичное решение (1.085s, 34.45Mb, не прошел тест 7 TL)
 fun mediumLevel(){
     //медленное решение O(n^2)
     val input = BufferedReader(FileReader("input.txt"))
@@ -56,7 +99,7 @@ fun mediumLevel(){
     output.flush()
 }
 
-//- 19:50 > notOK частичное решение (1.075s, 34.65Mb, не прошел тест 7 TL)
+// - 19:50 > notOK частичное решение (1.075s, 34.65Mb, не прошел тест 7 TL)
 fun mediumLevelV2(){
     val input = BufferedReader(FileReader("input.txt"))
     input.readLine()
@@ -89,7 +132,7 @@ fun mediumLevelV2(){
     output.flush()
 }
 
-//19:55 - 20:21 > частичное решение (1.064s, 36.64Mb, не прошел тест 7 TL)
+// 19:55 - 20:21 > частичное решение (1.064s, 36.64Mb, не прошел тест 7 TL)
 fun mediumLevelV3(){
     //через площади
 
@@ -127,7 +170,7 @@ fun mediumLevelV3(){
     output.flush()
 }
 
-//5:05 - 6:16 (от v3a до v5) //answer = "$answer${leftArea + arrR[index]} " - очень медленная строка
+// 5:05 - 6:16 (от v3a до v5) //answer = "$answer${leftArea + arrR[index]} " - очень медленная строка
 fun mediumLevelV3a(){
     //через площади
 
@@ -210,45 +253,4 @@ fun mediumLevelV4(){
         ans = "$ans${i + arrR[index]} "
     }
 }
-//> OK (0.547s, 40.67Mb)
-fun mediumLevelV5(){
 
-    val input = BufferedReader(FileReader("input.txt"))
-    val n = input.readLine().toInt()
-    val text = input.readText()
-    val arr = text.substring(0, text.length - 1).split(" ")//.map { it.toInt() }.toIntArray()
-
-    //Первый проход. Справа налево. Определяем сумму всех недовольных справа от нынешнего старосты
-    var rightSum = 0
-    val arrR = IntArray(arr.size)
-
-    for (i in arr.lastIndex downTo 0) {
-
-        val headman = arr[i].toInt()
-        arrR[i] = rightSum - ( (arr.lastIndex - i) * headman ) //rightSum - minArea
-
-        rightSum += headman
-    }
-
-    //Второй проход. Слева направо. Определяем сумму всех недовольных слева от нынешнего старосты
-    //И тут же записываем значение сумму найденного значения и записанным с первого прохода
-    //var answer = ""
-    var leftSum = 0
-
-    val ansArr = IntArray(arr.size)
-
-    arr.forEachIndexed { index, i ->
-
-        val headman = i.toInt()
-
-        val leftArea = (headman * index) - leftSum //maxArea - leftSum
-        ansArr[index] = leftArea + arrR[index]
-        //answer = "$answer${leftArea + arrR[index]} "
-
-        leftSum += headman
-    }
-
-    val output = BufferedWriter(FileWriter("output.txt"))
-    output.write(ansArr.joinToString(" "))
-    output.flush()
-}

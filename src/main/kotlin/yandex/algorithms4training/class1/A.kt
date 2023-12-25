@@ -23,8 +23,7 @@ fun main(args: Array<String>) {
 }
 
 
-
-//0:40 - 2:07 (1ч27мин) > OK (1.045s, 116.28Mb)
+// 0:40 - 2:07 (1ч27мин) > OK (1.045s, 116.28Mb)
 fun partition(){
     //версия для быстрой сортировки (не устойчивая)
 
@@ -98,7 +97,7 @@ fun partition(){
     output.flush()
 }
 
-//2:10 - 2:45 (35мин) > OK (1.301s, 134.63Mb)
+// 2:10 - 2:45 (35мин) > OK (1.301s, 134.63Mb)
 fun partitionV2(){
     //версия для сортировки слиянием (устойчивая)
 
@@ -167,7 +166,3 @@ fun partitionNotTrue(){
     output.flush()
 }
 
-/*private fun partition(arr: IntArray, l: Int, r: Int, predicate: Int): Pair<Int, Int> {
-
-    return 0 to 0
-}*/

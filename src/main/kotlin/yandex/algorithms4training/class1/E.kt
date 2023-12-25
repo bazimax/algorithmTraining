@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
     bitSortingInput()
 }
 
-//18:45 - 20:20 (1ч35мин) > OK (380ms, 35.41Mb)
+// 18:45 - 20:20 (1ч35мин) > OK (380ms, 35.41Mb)
 fun bitSortingInput(){
     val input = BufferedReader(FileReader("input.txt"))
     val n = input.readLine().split(" ").map { it.toInt() }[0] //1 ≤ n ≤ 1000

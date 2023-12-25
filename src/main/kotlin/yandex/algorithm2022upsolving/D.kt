@@ -121,36 +121,3 @@ private fun minStepToConvertSymbols(p1: String, p2: String): Int{
     //println("p1: $p1, p2: $p2 - $count")
     return count
 }
-
-/*
-import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.FileReader
-import java.io.FileWriter
-
-const val INPUT = "input.txt"
-const val OUTPUT = "output.txt"
-
-fun main(args: Array<String>) {
-    catsInArt()
-}
-fun catsInArt(){}
-
-fun readFile(pathToInputFile: String): MutableList<String>{
-
-    val file = BufferedReader(FileReader(pathToInputFile))
-
-    val listString = mutableListOf<String>()
-    file.lines().forEach { listString.add(it) }
-
-    return listString
-}
-
-fun writeFile(string: String, pathToOutputFile: String){
-
-    val output = BufferedWriter(FileWriter(pathToOutputFile))
-
-    output.write(string)
-    output.flush()
-}
-*/

@@ -16,7 +16,8 @@ import kotlin.math.min
 fun main(args: Array<String>) {
     addTwoFractionsV3()
 }
-//18:05 - 18:40 > OK (232ms, 15.16Mb)
+
+// 18:05 - 18:40 > OK (232ms, 15.16Mb)
 fun addTwoFractionsV3(){
     //алгоритм евклида
     val input = BufferedReader(FileReader("input.txt"))
@@ -120,7 +121,7 @@ fun addTwoFractionsV2(){
     output.flush()
 }
 
-//15:20 - 16:25 (1ч5мин) > notOK частичное решение (217ms, 15.04Mb, не прошел тест 5)
+// 15:20 - 16:25 (1ч5мин) > notOK частичное решение (217ms, 15.04Mb, не прошел тест 5)
 fun addTwoFractions(){
     val input = BufferedReader(FileReader("input.txt"))
 

@@ -17,11 +17,37 @@ import kotlin.math.max
 import kotlin.math.min
 
 fun main(args: Array<String>) {
-    //bunnyIsLearningGeometryV3()
+    bunnyIsLearningGeometryV4()
 }
 
-//20:20 - 21:10 (50мин) > notOK (4.054s, 40.49Mb, не прошел тест 11) //медленное решение TL
-fun bunnyIsLearningGeometry(){
+// 3:40 - 4:05 (25мин) > OK (0.877s, 38.66Mb)
+fun bunnyIsLearningGeometryV4(){
+    val input = BufferedReader(FileReader("input.txt"))
+    val (n, m) = input.readLine().split(" ").map { it.toInt() } // (1 <= n, m <= 1000)
+
+    var prevArr = input.readLine().split(" ").map { it.toInt() }.toIntArray()
+    var maxCarrotSquareSize = prevArr.maxOf { it }
+
+    repeat(n - 1) { _ ->
+        val nextArr = input.readLine().split(" ").map { it.toInt() }.toIntArray()
+
+        for (i in 1 until m) {
+            if (nextArr[i] != 0) {
+                nextArr[i] = intArrayOf(nextArr[i - 1], prevArr[i], prevArr[i - 1]).minOf { it } + 1
+                maxCarrotSquareSize = max(maxCarrotSquareSize, nextArr[i])
+            }
+        }
+        prevArr = nextArr
+        //println("${prevArr.joinToString(" ")} : $maxCarrotSquareSize")
+    }
+
+    val output = BufferedWriter(FileWriter("output.txt"))
+    output.write(maxCarrotSquareSize.toString())
+    output.flush()
+}
+
+// 20:20 - 21:10 (50мин) > notOK (4.054s, 40.49Mb, не прошел тест 11) //медленное решение TL
+/*fun bunnyIsLearningGeometry(){
     val input = BufferedReader(FileReader("input.txt"))
     val (n, m) = input.readLine().split(" ").map { it.toInt() } // (1 <= n, m <= 1000)
     //println("n: $n, m:$m")
@@ -82,8 +108,9 @@ private fun searchSquare(n: Int, m: Int, map: Array<IntArray>, currentCarrotSqua
     }
 
     return max(currentCarrotSquare, carrotSquare)
-}
-//21:10 - 23:15 (2ч5мин) //хоть и проходит до 13 теста - есть грубая ошибка (examplesG[4])
+}*/
+
+// 21:10 - 23:15 (2ч5мин) //хоть и проходит до 13 теста - есть грубая ошибка (examplesG[4])
 fun bunnyIsLearningGeometryV2(){
     //построчная проверка
     val input = BufferedReader(FileReader("input.txt"))
@@ -121,7 +148,7 @@ fun bunnyIsLearningGeometryV2(){
     output.flush()
 }
 
-//23:15 - 0:07 (52мин) не прошел 14 тест
+// 23:15 - 0:07 (52мин) не прошел 14 тест
 fun bunnyIsLearningGeometryV3(){
     val input = BufferedReader(FileReader("input.txt"))
     val (n, m) = input.readLine().split(" ").map { it.toInt() } // (1 <= n, m <= 1000)
@@ -159,7 +186,7 @@ fun bunnyIsLearningGeometryV3(){
     output.flush()
 }
 
-//0:10 - 0:50 (40мин) - не прошел 4 тест
+// 0:10 - 0:50 (40мин) - не прошел 4 тест
 fun bunnyIsLearningGeometryV3a(){
     val input = BufferedReader(FileReader("input.txt"))
     val (n, m) = input.readLine().split(" ").map { it.toInt() } // (1 <= n, m <= 1000)
@@ -213,31 +240,7 @@ fun bunnyIsLearningGeometryV3a(){
     output.flush()
 }
 
-//3:40 - 4:05 (25мин) > OK (0.877s, 38.66Mb)
-fun bunnyIsLearningGeometryV4(){
-    val input = BufferedReader(FileReader("input.txt"))
-    val (n, m) = input.readLine().split(" ").map { it.toInt() } // (1 <= n, m <= 1000)
 
-    var prevArr = input.readLine().split(" ").map { it.toInt() }.toIntArray()
-    var maxCarrotSquareSize = prevArr.maxOf { it }
-
-    repeat(n - 1) { _ ->
-        val nextArr = input.readLine().split(" ").map { it.toInt() }.toIntArray()
-
-        for (i in 1 until m) {
-            if (nextArr[i] != 0) {
-                nextArr[i] = intArrayOf(nextArr[i - 1], prevArr[i], prevArr[i - 1]).minOf { it } + 1
-                maxCarrotSquareSize = max(maxCarrotSquareSize, nextArr[i])
-            }
-        }
-        prevArr = nextArr
-        //println("${prevArr.joinToString(" ")} : $maxCarrotSquareSize")
-    }
-
-    val output = BufferedWriter(FileWriter("output.txt"))
-    output.write(maxCarrotSquareSize.toString())
-    output.flush()
-}
 
 fun bunnyIsLearningGeometryV2backup(){
     //принтер - построчная проверка

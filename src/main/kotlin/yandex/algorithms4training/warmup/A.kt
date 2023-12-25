@@ -17,7 +17,7 @@ import kotlin.math.min
 fun main(args: Array<String>) {
     notAMinimumOnTheSegmentV2()
 }
-//16:20 - 16:49 (29мин) > notOK (271ms, 28.77Mb, не прошел тест 3)
+// 16:20 - 16:49 (29мин) > notOK (271ms, 28.77Mb, не прошел тест 3)
 fun notAMinimumOnTheSegment(){
 
     val input = BufferedReader(FileReader("input.txt"))
@@ -41,7 +41,7 @@ fun notAMinimumOnTheSegment(){
     output.flush()
 }
 
-//16:50 - 17:35 (45мин) > OK (282ms, 30.42Mb)
+// 16:50 - 17:35 (45мин) + 30 > OK (282ms, 30.42Mb)
 fun notAMinimumOnTheSegmentV2(){
 
     val input = BufferedReader(FileReader("input.txt"))
@@ -86,44 +86,3 @@ fun notAMinimumOnTheSegmentV2(){
     output.write(answer)
     output.flush()
 }
-
-
-/*
-import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.FileReader
-import java.io.FileWriter
-
-const val INPUT = "input.txt"
-const val OUTPUT = "output.txt"
-
-fun main(args: Array<String>) {
-    catsInArt()
-}
-fun catsInArt(){
-    val input = BufferedReader(FileReader("input.txt"))
-    val (n, l) = input.readLine().split(" ").map { it.toInt() }
-
-    val output = BufferedWriter(FileWriter("output.txt"))
-    output.write("") //!!
-    output.flush()
-}
-
-fun readFile(pathToInputFile: String): MutableList<String>{
-
-    val file = BufferedReader(FileReader(pathToInputFile))
-
-    val listString = mutableListOf<String>()
-    file.lines().forEach { listString.add(it) }
-
-    return listString
-}
-
-fun writeFile(string: String, pathToOutputFile: String){
-
-    val output = BufferedWriter(FileWriter(pathToOutputFile))
-
-    output.write(string)
-    output.flush()
-}
-*/

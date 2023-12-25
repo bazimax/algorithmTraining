@@ -4,8 +4,8 @@ import yandex.*
 
 fun main(args: Array<String>) {
     //runTest("checkeredBoard", examplesA(), ::checkeredBoard)
-    //runTest("almostSquareNumbers", examplesC(), ::almostSquareNumbers)
-    runTest("unusualDivision", examplesB(), ::unusualDivision)
+    //runTest("unusualDivision", examplesB(), ::unusualDivision)
+    runTest("almostSquareNumbers", examplesC(), ::almostSquareNumbers)
     //runTest("maxAndAminoAcidSynthesis", examplesD(), ::maxAndAminoAcidSynthesisV2)
 }
 private fun examplesA(): Array<Pair<String, String>> {

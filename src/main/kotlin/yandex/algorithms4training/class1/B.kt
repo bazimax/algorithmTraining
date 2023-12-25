@@ -88,9 +88,45 @@ private fun partitionB(arr: IntArray, l: Int, r: Int, x: Int): Pair<Int, Int> {
     return l + lassThanX - 1 to l + moreThanX + 1 //индексы разделителей (predicate)
 }
 
-//backup
-//2:50 - 4:20 (1ч30мин) > notOK частичное решение (10.072s / 124.00Mb, не прошел тест 15 TL)
-//даже после изменения answer = "$answer$it " не проходит 18 тест TL
+// 10:55 - 11:05 (10 мин) > notOK частичное решение (10.085s, 212.46Mb, не прошел тест 19 TL)
+fun quickSortInputCFilter(){
+    val input = BufferedReader(FileReader("input.txt"))
+    val n = input.readLine().split(" ").map { it.toInt() }[0] //0 ≤ N ≤ 10^6
+
+    var ansArr = listOf<Int>()
+
+    ansArr = if (n == 0) emptyList()
+    else {
+        val arr = input.readLine().trim().split(" ").map { it.toInt() }.toIntArray() //-10^9 ≤ arr[i] ≤ 10^9
+        quicksortCFilter(arr.toList())
+    }
+
+    val output = BufferedWriter(FileWriter("output.txt"))
+    output.write(ansArr.joinToString(" "))
+    output.flush()
+}
+
+private fun quicksortCFilter(items:List<Int>):List<Int>{
+    if (items.count() < 2){
+        return items
+    }
+    val pivot = items[items.count()/2]
+
+    val equal = items.filter { it == pivot }
+//    println("pivot value is : "+equal)
+
+    val less = items.filter { it < pivot }
+//    println("Lesser values than pivot : "+less)
+
+    val greater = items.filter { it > pivot }
+//    println("Greater values than pivot : "+greater)
+
+    return quicksortCFilter(less) + equal + quicksortCFilter(greater)
+}
+
+// BACKUP
+// 2:50 - 4:20 (1ч30мин) > notOK частичное решение (10.072s / 124.00Mb, не прошел тест 15 TL)
+// даже после изменения answer = "$answer$it " не проходит 18 тест TL
 fun quickSortInput(){
     val input = BufferedReader(FileReader("input.txt"))
     val n = input.readLine().split(" ").map { it.toInt() }[0] //0 ≤ N ≤ 10^6
@@ -204,3 +240,4 @@ private fun quickSortV1(arr: IntArray, l: Int, r: Int){
         quickSortV1(arr, p + 1, r)
     }
 }
+

@@ -36,7 +36,6 @@ fun unusualDivision(){
         }
     }
 
-    //println(answer)
     writeFile(answer, "output.txt")
 }
 fun unusualDivisionV2(){
@@ -69,7 +68,6 @@ fun unusualDivisionV2(){
         }
     }
 
-    //println(answer)
     writeFile(answer, "output.txt")
 }
 
@@ -86,7 +84,6 @@ private fun calculate(num: Long, divider: Int, megaArrAnswers: LongArray): Long{
         val number = numToList[it]
         val factor = number / divider
 
-        //var calcFactor = 0L
         if (numLength > 1 && number != 0) {
             val calcFactor = megaArrAnswers[numLength - 2]
 
@@ -105,16 +102,18 @@ private fun calculate(num: Long, divider: Int, megaArrAnswers: LongArray): Long{
 }
 
 private fun arrOfPossibleCorrectAnswer(): IntArray {
-    //набор максимальных возможных правильных ответов для каждого делителя от 0 до 9
-    //set of maximum possible correct answers for each divisor 0-9
-    //0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    // набор максимальных возможных правильных ответов для каждого делителя от 0 до 9
+    // set of maximum possible correct answers for each divisor 0-9
+    // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
     return intArrayOf(-1, 9, 4, 3, 2, 1, 1, 1, 1, 1)
 }
 private fun megaArrOfCorrectAnswers(): Array<LongArray>{
-    //набор ответов для каждого посчитанного делителя (0-0; для 5,6,7,8,9 - 1; 4 - 2; 3 - 3; 2 - 4) от 1 до 18 степени
-    //вычисление:
-    //val map = calcSumCorrectAnswers(3, 18)
-    //map.forEach { print("${it.value}, ") }
+    // набор ответов для каждого посчитанного делителя (0-0; для 5,6,7,8,9 - 1; 4 - 2; 3 - 3; 2 - 4) от 1 до 18 степени
+    // вычисление:
+    // val map = calcSumCorrectAnswers(3, 18)
+    // map.forEach { print("${it.value}, ") }
+
     return arrayOf(
         longArrayOf(0),
         longArrayOf(1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535, 131071, 262143),
@@ -128,7 +127,7 @@ private fun megaArrOfCorrectAnswers(): Array<LongArray>{
 }
 
 /*
-//Вычисления
+// Вычисления
 private fun calcSumCorrectAnswers(num: Int, degree: Int): HashMap<Int, Long>{
     val map = HashMap<Int, Long>()
     var sum = 0L
@@ -168,42 +167,5 @@ private fun setOfPossibleCorrectAnswer(): HashMap<Int, Int>{
     map[8] = 1
     map[9] = 1
     return map
-}
-*/
-
-
-
-
-
-/*
-import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.FileReader
-import java.io.FileWriter
-
-const val INPUT = "input.txt"
-const val OUTPUT = "output.txt"
-
-fun main(args: Array<String>) {
-catsInArt()
-}
-fun catsInArt(){}
-
-fun readFile(pathToInputFile: String): MutableList<String>{
-
-val file = BufferedReader(FileReader(pathToInputFile))
-
-val listString = mutableListOf<String>()
-file.lines().forEach { listString.add(it) }
-
-return listString
-}
-
-fun writeFile(string: String, pathToOutputFile: String){
-
-val output = BufferedWriter(FileWriter(pathToOutputFile))
-
-output.write(string)
-output.flush()
 }
 */
